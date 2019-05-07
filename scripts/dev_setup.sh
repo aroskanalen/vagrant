@@ -64,4 +64,13 @@ done
 
 cd ..
 
+mkdir aakb
+cd aakb
+
+GIT_ORGANIZATION=aakb
+
+clone_latest aakb/os2display-aarhus-templates
+
+cd ..
+
 cd ..
