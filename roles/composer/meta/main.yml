@@ -1,0 +1,3 @@
+---
+dependencies:
+  - { role: php72, when: php_version == '7.2' }
