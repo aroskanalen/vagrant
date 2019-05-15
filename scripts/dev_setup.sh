@@ -9,16 +9,8 @@ cd $base_dir
 mkdir packages
 cd packages
 
-mkdir os2display
-cd os2display
-
-GIT_ORGANIZATION=os2display
-
 function clone_latest {
-  git clone --branch=master https://github.com/$GIT_ORGANIZATION/$1.git
-
-#  If you can use ssh access to the git repository, you can do this instead:
-#  git clone --branch=master git@github.com:$GIT_ORGANIZATION/$1.git
+  git clone --branch=master git@github.com:$GIT_ORGANIZATION/$1.git
 
   cd $1
 
@@ -29,9 +21,19 @@ function clone_latest {
   cd ..
 }
 
+
+##### os2display #####
+
+mkdir os2display
+cd os2display
+
+GIT_ORGANIZATION=os2display
+
 BUNDLES="core-bundle
 media-bundle
 admin-bundle
+campaign-bundle
+screen-bundle
 default-template-bundle"
 
 for BUNDLE in $BUNDLES
@@ -42,6 +44,9 @@ do
 done
 
 cd ..
+
+
+##### itk-os2display #####
 
 mkdir itk-os2display
 cd itk-os2display
@@ -64,12 +69,15 @@ done
 
 cd ..
 
+
+##### aakb #####
+
 mkdir aakb
 cd aakb
 
 GIT_ORGANIZATION=aakb
 
-clone_latest aakb/os2display-aarhus-templates
+clone_latest os2display-aarhus-templates
 
 cd ..
 
